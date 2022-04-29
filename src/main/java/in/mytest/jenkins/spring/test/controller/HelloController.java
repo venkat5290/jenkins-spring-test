@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     private String instance = "Test-Machine";
-    private String name = "SPRINGHERO";
+    private String name = "venkat";
 
     @Autowired
     private HelloService hs;
