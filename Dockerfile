@@ -7,7 +7,7 @@ COPY src /opt/app
 RUN mvn clean install -DskipTests
 
 # Docker Build Stage
-FROM openjdk:11-jdk-alpine
+FROM openjdk:11
 COPY --from=build /opt/app/target/*.jar app.jar
 ENV PORT 8090
 EXPOSE $PORT
