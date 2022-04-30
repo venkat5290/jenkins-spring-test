@@ -1,7 +1,5 @@
 
-
-
-FROM maven:3-jdk-8-alpine AS build
+FROM maven:3.8.5-jdk-11-slim AS build
 
 # Build Stage
 WORKDIR /opt/app
