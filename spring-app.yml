@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: spring-test-app
-          image: venkat7010/springboot-app:14
+          image: venkat7010/springboot-app:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8090
