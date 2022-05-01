@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-app
+  labels:
+    app: spring-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-app
+  template:
+    metadata:
+      labels:
+        app: spring-app
+    spec:
+      containers:
+        - name: spring-test-app
+          image: venkat7010/springboot-app:14
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8090
+      imagePullSecrets:
+        - name: dockerhub-cred
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-app-svc
+spec:
+  selector:
+    app: spring-app
+  ports:
+    - port: 80
+      targetPort: 8090
+
+
